@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+  <div class="container">
+  
+    <h1 class="text-block1">Рассчет количества солнечных панелей для вашего дома!</h1>
+    <div class="text-block">Из списка выберите электроприборы, которые есть в вашем доме </div>
+</body>
+<html>
+<head>
+  <title>Расчет с учетом количества выбранных элементов </title>
+
+  <script>
+    
+    function calculateResult() {
+  var selectedItems = document.querySelectorAll('input[type="checkbox"]:checked');
+  var resultModal = document.getElementById('resultModal');
+  var resultText = document.getElementById('resultText');
+  
+  var result;
+  
+  if (selectedItems.length > 7) {
+    result = 'Вам понадобится ' + Math.ceil(11000 / 1.6 / 400) + ' панелей. Для покупки позвоните по номеру: 8(989)211-67-87';
+  } else if (selectedItems.length > 4) {
+    result = 'Вам понадобится ' + Math.ceil(7000 / 1.6 / 400) + ' панелей. Для покупки позвоните по номеру: 8(989)211-67-87';
+  } else if (selectedItems.length == 0) {
+    result = 'Выберите хотя бы один элемент';
+  } else {
+    result = 'Вам понадобится ' + Math.ceil(4000 / 1.6 / 400) + ' панелей. Для покупки позвоните по номеру: 8(989)211-67-87';
+  }
+
+  resultText.innerText = result;
+  resultModal.style.display = "block"; 
+}
+
+document.getElementsByClassName("close")[0].onclick = function() {
+  document.getElementById('resultModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+  var resultModal = document.getElementById('resultModal');
+  if (event.target == resultModal) {
+    resultModal.style.display = "none";
+  }
+}
+  </script>
+</head>
+<body>
+ 
+  <h2><p align="center">Выберите элементы</p></h2>
+  <div class="container2">
+    <div class="sidebar">
+  <input type="checkbox" id="item1">  Холодильник <br>
+  <input type="checkbox" id="item2"> Стиральная машина <br>
+  <input type="checkbox" id="item3"> Телевизор <br>
+  <input type="checkbox" id="item4"> Духовая печь <br>
+  <input type="checkbox" id="item5"> Микроволновая печь <br>
+  <input type="checkbox" id="item6"> Пылесос <br>
+  <input type="checkbox" id="item7"> Чайник <br>
+  <input type="checkbox" id="item8"> Светильники <br>
+  <input type="checkbox" id="item9"> Фен <br>
+  <input type="checkbox" id="item10"> ПК <br>
+  <input type="checkbox" id="item11"> Тостер <br>
+  <input type="checkbox" id="item12"> Прочие электроприборы <br>
+</div>
+<div class="content"> 
+  <img src=" solar_panel_PNG18.png" width="300" height="" alt="Изображение солнечной модели"/>
+</div>
+</div>
+<div id="resultModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="resultText"></p>
+  </div>
+</div>
+<script>
+var closeBtn = document.querySelector('.close');
+var modal = document.querySelector('.modal');
+
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+closeBtn.addEventListener('click', closeModal);
+</script>
+<button onclick="calculateResult()">Рассчитать</button>
+ 
+  <div id="result"></div>
+</div>
+</div>
+    <div class="text-block56">
+Актуальность солнечных батарей растет каждый день. Связано это с постоянно растущими тарифами на электроэнергию, а также с ухудшающейся экологической обстановкой в мире.
+солнечные панели на крыше
+Несмотря на это, многие соотечественники до сих пор не рассматривают всерьез возможность получения электричества из солнечной энергии. По этой причине стоит рассмотреть работу солнечных батарей в деталях, а также все их положительные стороны.
+Наш магазин предоставляет возможность приобрести солнечные панели. С помощью калькулятора Вы сможете узнать примерное количество панелей для вашего участка.
+</div>
+</body>
+</html>
+
+
+</html>
